@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[my-first-blog]]></title>
-    <url>%2F2019%2F04%2F14%2Fmy-first-blog%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[object类的概述]]></title>
+    <url>%2F2019%2F04%2F15%2Fobject%E7%B1%BB%E7%9A%84%E6%A6%82%E8%BF%B0%2F</url>
+    <content type="text"><![CDATA[object类的概述 object类是类层次结构的根类，每个类都使用object作为超类。 即每个类都直接或间接的继承object类。 object类中方法介绍 hashCode1public int hashCode():返回对象的哈希码值。 ​ 注意：哈希值是根据哈希算法计算出来的一个值，该值与地址值有关，但不是实际的值。可理解为地址值。 getClass1public final Class&lt;?&gt; getClass():返回object运行时类，得到一个Class对象。返回的 Class 对象是由所表示类的 static synchronized 方法锁定的对象。 ​ 在Class类中有getname()方法以 String 的形式返回此 Class 对象所表示的实体（类、接口、数组类、基本类型或 void）名称。 toString1234567891011public String toString():返回该对象的字符串表示。toString方法返回一个字符串，它的值等于： getClass().getName() + '@' + Integer.toHexString(hashCode()) ps：Integer.toHexString（）为Integer类下一静态方法，public static String toHexString(int i)：以十六进制（基数 16）无符号整数形式返回一个整数参数的字符串表示形式。源码：public String toString() &#123; return getClass().getName() + "@" + Integer.toHexString(hashCode()); &#125; ​ 但toString方法返回的信息是无意义的。所以建议所以子类重写改方法。 重写的格式为：把所有成员变量值返回即可。但这样不是最好，自动生成即可。 12345678class Test&#123; int num; @Override public String toString() &#123; return "Test [num=" + num + "]"; &#125;&#125; 直接输出一个对象的名称，就是调用改对象的toString()方法。 equals12345public boolean equals(Object obj):指示其他某个对象是否与此对象“相等”。源码：public boolean equals(Object obj) &#123; return (this == obj); &#125; ==: ​ 基本类型：比较值是否相等。 ​ 引用类型：比较其地址值是否相等。 该方法，默认情况比较的是地址值，但是比较地址值意义不大，所以要重写改方法。 在方法重写时比较对象的成员变量值是否相同。 重写代码优化：提高效率，提高程序健壮性。 要想做到最好优化还是自动生成。（自动生成时会和hascode()方法一起生成。） 1234567891011121314151617181920212223242526272829303132class Test&#123; int num; String sfa; @Override public int hashCode() &#123; final int prime = 31; int result = 1; result = prime * result + num; result = prime * result + ((sfa == null) ? 0 : sfa.hashCode()); return result; &#125; @Override public boolean equals(Object obj) &#123; if (this == obj) return true; if (obj == null) return false; if (getClass() != obj.getClass()) return false; Test other = (Test) obj; if (num != other.num) return false; if (sfa == null) &#123; if (other.sfa != null) return false; &#125; else if (!sfa.equals(other.sfa)) return false; return true; &#125;&#125; 注：此为eclipse生成可能与idea生成的有所不同，但效果一样。 finalize1protected void finalize() throws Throwable :当垃圾回收器确定不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法。 clone1protected Object clone() throws CloneNotSupportedException:创建并返回此对象的一个副本。“副本”的准确含义可能依赖于对象的类。 Cloneable：此类实现了Cloneable接口，以示Object.clone()方法合法的进行对该类的按字段复制。 ​ Cloneable是一个标记接口，表明实现该接口的类可以实现对象的复制。]]></content>
+      <categories>
+        <category>Javase</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
