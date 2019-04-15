@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2019-04-15T14:22:32.095Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/04/15/Fliter-Listener/</loc>
     
     <lastmod>2019-04-15T14:18:19.537Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://yoursite.com/schedule/index.html</loc>
     
     <lastmod>2019-04-14T13:22:19.087Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/about/index.html</loc>
-    
-    <lastmod>2019-04-14T13:21:14.086Z</lastmod>
     
   </url>
   
